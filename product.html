@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product | Anushka Chauhan</title>
+  <link rel="icon" href="logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body class="text-red-900">
+  <!-- Top banner -->
+  <div class="top-banner text-white text-[11px] tracking-widest uppercase">
+    <div class="banner-slider">
+      <p class="banner-text">Rooted in Heritage, Reimagined for Today</p>
+      <p class="banner-text">Clothing that carries a story</p>
+      <p class="banner-text">Every piece, stitched by hand in India</p>
+    </div>
+  </div>
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="navbar-top">
+      <div class="ship-to">
+        <span>Ship to :</span>
+        <select aria-label="Ship to country">
+          <option>India ₹</option>
+          <option>USA $</option>
+          <option>UK £</option>
+          <option>UAE AED</option>
+        </select>
+      </div>
+      <a href="index.html" class="logo" aria-label="Anushka Chauhan">
+        <img src="logo.png" alt="Anushka Chauhan - Handcrafted in India">
+      </a>
+      <div class="nav-icons">
+        <button aria-label="Search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg></button>
+        <span class="divider"></span>
+        <button aria-label="Account"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg></button>
+        <button aria-label="Wishlist"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-8-5.2-8-11a4.5 4.5 0 018-2.8A4.5 4.5 0 0120 10c0 5.800-8 11-8 11z"/></svg></button>
+        <button aria-label="Bag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 8h14l-1 12H6L5 8z"/><path d="M9 8V6a3 3 0 016 0v2"/></svg></button>
+        <a href="#!" aria-label="WhatsApp" class="whatsapp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 00-8.600 15L2 22l5.200-1.400A10 10 0 1012 2zm5.200 14c-.2.600-1.200 1.200-1.700 1.200-.5.100-1 .2-3.300-.7-2.800-1.200-4.600-4-4.700-4.200-.1-.2-1.100-1.500-1.100-2.800s.7-2 1-2.300c.2-.3.500-.3.700-.3h.5c.2 0 .4 0 .6.500l.8 2c.1.200.1.400 0 .5l-.4.600-.3.300c-.1.200-.3.300-.1.600.2.300.8 1.300 1.700 2.100 1.200 1 2.100 1.300 2.400 1.500.3.100.5.100.6-.1l.9-1.100c.2-.3.400-.2.600-.1l1.900.9c.3.100.5.200.5.300.1.200.1.800-.1 1.400z"/></svg></a>
+      </div>
+    </div>
+    <nav class="menu">
+      <a href="#!">Lehengas</a>
+      <a href="#!">Sarees</a>
+      <a href="#!">Anarkali</a>
+      <a href="#!">Sharara</a>
+      <a href="#!">Wedding</a>
+      <a href="#!">Dupattas</a>
+      <a href="#!">Our Story</a>
+      <a href="#!">Discover</a>
+    </nav>
+  </header>
+
+
+  <main class="pdp">
+    <nav class="pdp-crumbs"><span><a href="index.html">Home</a> / <a href="index.html#shop">Shop</a> / <span id="crumbName">Product</span></span><a href="index.html" class="pdp-back" id="pdpBack"><i class="pdp-back-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 6l-6 6 6 6"/></svg></i><span>Back</span></a></nav>
+    <div class="pdp-layout">
+
+      <!-- Left: details (sticky) -->
+      <aside class="pdp-left">
+        <div class="pdp-sticky">
+          <h1 class="pdp-name" id="pdpName">Embroidered Lehenga Set</h1>
+          <ul class="pdp-list">
+            <li>Includes lehenga, blouse and dupatta</li>
+            <li>Rich hand embroidery with zardozi and sequin work</li>
+            <li>Fully lined, with a concealed side zip</li>
+            <li>Made to order, ready in 3&ndash;4 weeks</li>
+            <li>Handcrafted in India</li>
+            <li>Dry clean only</li>
+            <li>Colour may vary slightly from the photograph</li>
+            <li>Exchange within 7 days of delivery</li>
+          </ul>
+        </div>
+      </aside>
+
+      <!-- Center: scrollable images -->
+      <div class="pdp-center">
+        <div class="pdp-shot" id="shot1"></div>
+        <div class="pdp-shot pdp-zoom-top" id="shot2"></div>
+        <div class="pdp-shot pdp-zoom-bottom" id="shot3"></div>
+      </div>
+
+      <!-- Right: buy box (sticky) -->
+      <aside class="pdp-right">
+        <div class="pdp-sticky">
+          <p class="pdp-price" id="pdpPrice">MRP &nbsp;&#8377; 0.00</p>
+          <div class="pdp-sizes-head"><span>Size</span><a href="#!" id="sizeChartLink">Size chart</a></div>
+          <div class="pdp-sizes" id="pdpSizes">
+            <button type="button">XS</button><button type="button">S</button><button type="button">M</button><button type="button">L</button><button type="button">XL</button>
+          </div>
+          <p class="pdp-msg" id="pdpMsg"></p>
+          <button type="button" class="pdp-add" id="pdpAdd">Add To Cart</button>
+        </div>
+      </aside>
+
+    </div>
+  </main>
+
+  <section class="shelf shelf-solid also">
+    <div class="also-head"><h2 class="also-title">You May Also Like</h2></div>
+    <div class="prod-slider">
+      <button class="prod-arrow prod-prev" aria-label="Previous">&larr;</button>
+      <div class="prod-grid" id="alsoGrid"></div>
+      <button class="prod-arrow prod-next" aria-label="Next">&rarr;</button>
+    </div>
+  </section>
+
+  <div class="toast" id="toast" role="status"></div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-subscribe">
+      <h2><strong>Be The First To Know</strong> <span>Veerangana &middot; Chapter I</span></h2>
+      <form class="subscribe-form" onsubmit="event.preventDefault(); this.reset();">
+        <input type="email" placeholder="Email address" aria-label="Email address" required>
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+    <nav class="footer-links">
+      <a href="#!">Our Story</a>
+      <a href="#!">Veerangana</a>
+      <a href="#!">Book Appointment</a>
+      <a href="#!">Contact Us</a>
+      <a href="#!">FAQs</a>
+    </nav>
+    <nav class="footer-links footer-links-sm">
+      <a href="#!">Privacy Policy</a>
+      <a href="#!">Terms &amp; Conditions</a>
+      <a href="#!">Return &amp; Refund Policy</a>
+      <a href="#!">Shipping &amp; Exchange</a>
+    </nav>
+    <div class="footer-pay">
+      <span class="pay-badge pay-card"><img src="assets/paypal-svg-e057cab0.svg" alt="PayPal"></span>
+      <span class="pay-badge pay-icon"><img src="assets/googlepay-fa7f905e.svg" alt="Google Pay"></span>
+      <span class="pay-badge pay-icon"><img src="assets/applepay-a22bd9f9.svg" alt="Apple Pay"></span>
+      <span class="pay-badge pay-card"><img src="assets/visa-svg-cfb03396.svg" alt="Visa"></span>
+      <span class="pay-badge pay-card"><img src="assets/mastercard-svg-6678f524.svg" alt="Mastercard"></span>
+      <span class="pay-badge pay-card"><img src="assets/amex-svg-d3b367bf.svg" alt="American Express"></span>
+    </div>
+    <p class="footer-copy">&copy; 2026 Anushka Chauhan. Handcrafted in India. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const texts = document.querySelectorAll(".banner-text");
+    let i = 0;
+    texts[0].classList.add("active");
+    setInterval(() => {
+      texts[i].classList.remove("active");
+      texts[i].classList.add("exit");
+      const prev = texts[i];
+      setTimeout(() => prev.classList.remove("exit"), 600);
+      i = (i + 1) % texts.length;
+      texts[i].classList.add("active");
+    }, 3000);
+
+    const q = new URLSearchParams(location.search);
+    const name = q.get("name") || "Embroidered Lehenga Set";
+    const price = q.get("price") || "MRP ₹ 0.00";
+    const img = q.get("img") || "";
+    document.title = name + " | Anushka Chauhan";
+    document.getElementById("pdpName").textContent = name;
+    document.getElementById("crumbName").textContent = name;
+    document.getElementById("pdpPrice").textContent = price;
+    const gallery = (q.get("gallery") || "").split("|").filter(Boolean);
+    if (gallery.length) {
+      const wrap = document.querySelector(".pdp-center");
+      wrap.innerHTML = "";
+      gallery.forEach((src) => {
+        const d = document.createElement("div");
+        d.className = "pdp-shot";
+        if (/\.mp4$/i.test(src)) {
+          const v = document.createElement("video");
+          v.src = src;
+          v.autoplay = true;
+          v.muted = true;
+          v.loop = true;
+          v.playsInline = true;
+          d.appendChild(v);
+        } else {
+          d.style.backgroundImage = "url('" + src.replace(/'/g, "%27") + "')";
+        }
+        wrap.appendChild(d);
+      });
+    } else if (img) {
+      const u = "url('" + img.replace(/'/g, "%27") + "')";
+      ["shot1", "shot2", "shot3"].forEach((id) => (document.getElementById(id).style.backgroundImage = u));
+    }
+
+    let size = "";
+    const msg = document.getElementById("pdpMsg");
+    const toast = (t) => {
+      const el = document.getElementById("toast");
+      el.textContent = t;
+      el.classList.add("show");
+      clearTimeout(toast.t);
+      toast.t = setTimeout(() => el.classList.remove("show"), 2200);
+    };
+    document.querySelectorAll("#pdpSizes button").forEach((b) => {
+      b.onclick = () => {
+        size = b.textContent;
+        document.querySelectorAll("#pdpSizes button").forEach((x) => x.classList.toggle("active", x === b));
+        msg.textContent = "";
+      };
+    });
+    document.getElementById("pdpAdd").onclick = () => {
+      if (!size) { msg.textContent = "Please select a size"; return; }
+      toast("Added to your bag (size " + size + ")");
+    };
+    document.getElementById("pdpBack").onclick = (e) => { if (history.length > 1) { e.preventDefault(); history.back(); } };
+    document.getElementById("sizeChartLink").onclick = (e) => { e.preventDefault(); toast("Size chart coming with the collection"); };
+
+    // You may also like
+    const PRODUCTS = [
+      {
+        "name": "Red Silk Embroidered Lehenga Set",
+        "price": "1,45,000.00",
+        "img": "assets/UL5476D-416-RED-1-101-21-07-2021-05-49-58111336.jpg",
+        "img2": "assets/UL5476D-416-RED-3-301-21-07-2021-05-52-fc269bd6.jpg",
+        "gallery": [
+          "assets/UL5476D-416-RED-1-101-21-07-2021-05-49-2b64f1e4.jpg",
+          "assets/UL5476D-416-RED-3-301-21-07-2021-05-52-eb8d53a4.jpg",
+          "assets/UL5476D-416-RED-2-401-21-07-2021-05-51-8fa0fed2.jpg",
+          "assets/UL5476D-416-RED-4-501-21-07-2021-05-52-48be7749.jpg",
+          "assets/UL5476D-416-RED-5-701-21-07-2021-05-57-9a0f3719.jpg"
+        ]
+      },
+      {
+        "name": "Mustard Yellow Embroidered Lehenga Set",
+        "price": "1,29,000.00",
+        "img": "assets/SKT4953-420-MUSTARD-YELLOW-101-23225-13--fbc720f8.jpg",
+        "img2": "assets/SKT4953-420-MUSTARD-YELLOW-301-23273-13--1c91ced9.jpg",
+        "gallery": [
+          "assets/SKT4953-420-MUSTARD-YELLOW-101-23225-13--b567bd39.jpg",
+          "assets/SKT4953-420-MUSTARD-YELLOW-301-23273-13--1e7e962d.jpg",
+          "assets/SKT4953-420-MUSTARD-20YELLOW-301-23-09-2-44658917.mp4",
+          "assets/SKT4953-420-MUSTARD-YELLOW-444-23259-13--4b3120b1.jpg",
+          "assets/SKT4953-420-MUSTARD-YELLOW-501-23280-13--6fcbd693.jpg",
+          "assets/SKT4953-420-MUSTARD-YELLOW-601-23301-13--0dc2df80.jpg"
+        ]
+      },
+      {
+        "name": "Rani Pink Embroidered Lehenga Set",
+        "price": "68,000.00",
+        "img": "assets/SKT5211-425-RANI-1-101-401-21-07-2021-07-881c4dd1.jpg",
+        "img2": "assets/SKT5211-425-RANI-3-301-21-07-2021-07-04-654927d7.jpg",
+        "gallery": [
+          "assets/SKT5211-425-RANI-1-101-401-21-07-2021-07-261d265e.jpg",
+          "assets/SKT5211-425-RANI-3-301-21-07-2021-07-04-239fafb2.jpg",
+          "assets/SKT5211-425-RANI-2-21-07-2021-07-03-8094d056.jpg",
+          "assets/SKT5211-425-RANI-4-501-21-07-2021-07-04-bb9757ac.jpg",
+          "assets/SKT5211-425-RANI-5-601-21-07-2021-07-04-9f528421.jpg",
+          "assets/SKT5211-425-RANI-6-701-21-07-2021-07-06-3d3d31ce.jpg"
+        ]
+      },
+      {
+        "name": "Rani Pink Festive Embroidered Lehenga Set",
+        "price": "72,000.00",
+        "img": "assets/UL4994VD-425-RANI-101-24170-16-09-2024-1-73bfc20e.jpg",
+        "img2": "assets/UL4994VD-425-RANI-301-24190-16-09-2024-1-079ccc60.jpg",
+        "gallery": [
+          "assets/UL4994VD-425-RANI-101-24170-16-09-2024-1-0d490070.jpg",
+          "assets/UL4994VD-425-RANI-301-24190-16-09-2024-1-460301e1.jpg",
+          "assets/UL4994VD-425-RANI-301-30-09-2024-08-03-0-a45a2026.mp4",
+          "assets/UL4994VD-425-RANI-401-24176-16-09-2024-1-39a693d1.jpg",
+          "assets/UL4994VD-425-RANI-501-24197-16-09-2024-1-e224877b.jpg",
+          "assets/UL4994VD-425-RANI-501-24203-16-09-2024-1-59ae94af.jpg",
+          "assets/UL4994VD-425-RANI-601-24199-16-09-2024-1-b82fc6d9.jpg"
+        ]
+      },
+      {
+        "name": "Rani Pink Bridal Lehenga Set",
+        "price": "1,35,000.00",
+        "img": "assets/UL5369-425-RANI-3-301-05-02-2026-09-56-ac92cb6c.jpg"
+      },
+      {
+        "name": "Wine Embroidered Anarkali Set",
+        "price": "54,000.00",
+        "img": "assets/TLB196-422-WINE-6569-19-01-2025-01-48-39050472.jpg"
+      },
+      {
+        "name": "Cream Embroidered Sharara Set",
+        "price": "58,000.00",
+        "img": "assets/SAS8186-402-CREAM-101-15954-09-02-2025-2-d11bf2e6.jpg"
+      },
+      {
+        "name": "Cream Handloom Saree",
+        "price": "42,000.00",
+        "img": "assets/SB18989-402-CREAM-3-301-21-07-2021-02-26-4b832656.jpg"
+      }
+    ];
+    const heart = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-8-5.2-8-11a4.5 4.5 0 018-2.8A4.5 4.5 0 0120 10c0 5.8-8 11-8 11z"/></svg>';
+    const cartIcon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h2.5l2 11h10l2-8H7"/><circle cx="9" cy="19.5" r="1.2"/><circle cx="17" cy="19.5" r="1.2"/></svg>';
+    const grid = document.getElementById("alsoGrid");
+    PRODUCTS.filter((x) => x.name !== name).forEach((x) => {
+      const card = document.createElement("article");
+      card.className = "prod-card";
+      const hover = x.img2 ? " has-hover" : "";
+      const style = "background-image:url('" + x.img + "')" + (x.img2 ? ";--img2:url('" + x.img2 + "')" : "");
+      card.innerHTML =
+        '<div class="prod-img' + hover + '" style="' + style + '"><button class="prod-wish" aria-label="Add to wishlist">' + heart + '</button></div>' +
+        '<div class="prod-info"><h3 class="prod-name"></h3><div class="prod-bottom"><p class="prod-price"></p>' +
+        '<button class="prod-cart" aria-label="Add to cart">' + cartIcon + '</button></div></div>';
+      card.querySelector(".prod-name").textContent = x.name;
+      card.querySelector(".prod-price").innerHTML = "MRP &nbsp;\u20B9 " + x.price;
+      card.addEventListener("click", (e) => {
+        if (e.target.closest(".prod-wish")) { e.target.closest(".prod-wish").classList.toggle("on"); return; }
+        if (e.target.closest(".prod-cart")) { toast("Added to your bag"); return; }
+        const params = new URLSearchParams({ name: x.name, price: "MRP \u20B9 " + x.price, img: x.img });
+        if (x.gallery) params.set("gallery", x.gallery.join("|"));
+        location.href = "product.html?" + params.toString();
+      });
+      grid.appendChild(card);
+    });
+    const slider = document.querySelector(".also .prod-slider");
+    const track = slider.querySelector(".prod-grid");
+    const by = () => track.clientWidth * 0.8;
+    slider.querySelector(".prod-prev").onclick = () => track.scrollBy({ left: -by(), behavior: "smooth" });
+    slider.querySelector(".prod-next").onclick = () => track.scrollBy({ left: by(), behavior: "smooth" });
+  </script>
+</body>
+</html>
