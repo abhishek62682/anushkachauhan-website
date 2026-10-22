@@ -577,9 +577,8 @@ body {
   border: 0;
   font: inherit;
   font-size: 12px;
-  font-weight: 600;
   letter-spacing: 0.04em;
-  text-transform: capitalize;
+  text-transform: uppercase;
   cursor: pointer;
 }
 .subscribe-form button:hover { background: #f3e9d8; }
@@ -1086,8 +1085,7 @@ body {
   border: 1.5px solid #fff;
   color: #fff;
   text-decoration: none;
-  text-transform: capitalize;
-  font-weight: 600;
+  text-transform: uppercase;
   letter-spacing: 0.2em;
   font-size: 13px;
   transition: background 0.25s ease, color 0.25s ease;
