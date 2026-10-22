@@ -1500,3 +1500,71 @@ body {
   .also-head { padding: 0 14px; margin-bottom: 22px; }
   .also-title { font-size: 20px; }
 }
+
+/* ===== Mobile pass 2: bigger logo and text, wider product cards, more section padding, Back fix ===== */
+@media (max-width: 768px) {
+  /* logo + header text */
+  .logo img { height: 58px; }
+  .ship-to { font-size: 14px; }
+  .menu a { font-size: 13px; }
+  .top-banner { font-size: 11px; }
+
+  /* body text */
+  .hero-sub { font-size: 16px; }
+  .hero-btn { font-size: 13px; }
+  .trending-sub, .shelf-sub, .edits-sub { font-size: 15px; }
+  .prod-name { font-size: 13px; letter-spacing: 0.06em; line-height: 1.5; min-height: 0; }
+  .prod-price { font-size: 14px; }
+  .prod-cart { width: 38px; height: 38px; }
+  .edit-card p { font-size: 15px; }
+  .feature span { font-size: 13px; }
+  .footer-subscribe h2, .footer-subscribe h2 span { font-size: 14px; }
+  .subscribe-form input, .subscribe-form button { font-size: 15px; }
+  .footer-links a, .footer-links-sm a { font-size: 14px; }
+  .footer-copy { font-size: 13px; line-height: 1.6; }
+
+  /* product carousels use more of the screen width */
+  .prod-slider .prod-card { flex-basis: 80%; }
+  .prod-slider .prod-grid { gap: 14px; padding: 0 16px; scroll-padding-left: 16px; }
+
+  /* more breathing room above and below every section */
+  .cat-section { padding: 104px 0 112px; }
+  .trending { padding: 108px 0 116px; }
+  .edits { padding: 108px 0 116px; }
+  .shelf { padding: 108px 0 116px; }
+  .look { padding: 96px 16px; }
+  .features { padding: 84px 0 88px; }
+  .footer { padding: 96px 16px 64px; }
+  .also { padding: 84px 0 96px; }
+  .hero-content { bottom: 52px; }
+}
+@media (max-width: 860px) {
+  /* product page */
+  .pdp { padding: 28px 16px 90px; }
+  .pdp-crumbs {
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 12px;
+    font-size: 14px;
+    margin-bottom: 22px;
+  }
+  .pdp-crumbs > span:first-child {
+    flex: 1;
+    min-width: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .pdp-crumbs .pdp-back {
+    flex: none;
+    font-size: 16px;
+    padding: 6px 0 6px 10px;
+  }
+  .pdp-left .pdp-list { font-size: 14px; line-height: 1.85; }
+  .pdp-left .pdp-name { font-size: 22px; }
+  .pdp-right .pdp-price { font-size: 24px; }
+  .pdp-sizes button { min-width: 48px; padding: 13px 0; font-size: 15px; }
+  .pdp-msg { font-size: 14px; }
+  .pdp-add { font-size: 15px; padding: 18px 0; }
+  .also-title { font-size: 22px; }
+}
