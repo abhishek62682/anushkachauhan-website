@@ -222,12 +222,13 @@ body {
   opacity: 1;
 }
 @media (max-width: 768px) {
-  .hero { min-height: 380px; }
+  .hero { min-height: 340px; }
   .hero-slide { object-position: 32% top; }
 }
 
 .first-screen {
   min-height: 100vh;
+  min-height: 100svh;
   display: flex;
   flex-direction: column;
 }
@@ -576,8 +577,9 @@ body {
   border: 0;
   font: inherit;
   font-size: 12px;
+  font-weight: 600;
   letter-spacing: 0.04em;
-  text-transform: uppercase;
+  text-transform: capitalize;
   cursor: pointer;
 }
 .subscribe-form button:hover { background: #f3e9d8; }
@@ -1084,14 +1086,15 @@ body {
   border: 1.5px solid #fff;
   color: #fff;
   text-decoration: none;
-  text-transform: uppercase;
+  text-transform: capitalize;
+  font-weight: 600;
   letter-spacing: 0.2em;
   font-size: 13px;
   transition: background 0.25s ease, color 0.25s ease;
 }
 .hero-btn:hover { background: #fff; color: #6b100b; }
 @media (max-width: 768px) {
-  .hero-content { bottom: 32px; }
+  .hero-content { bottom: 18px; }
   .hero-ornament { width: 30px; margin-bottom: 10px; }
   .hero-eyebrow { font-size: 10px; letter-spacing: 0.24em; }
   .hero-title { font-size: 34px; letter-spacing: 0.12em; }
