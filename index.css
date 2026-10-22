@@ -5,6 +5,12 @@ body {
   background-image: url('bg-pattern.webp');
   background-repeat: repeat;
   background-size: 1000px auto;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.footer {
+  margin-top: auto;
 }
 
 .top-banner {
@@ -323,9 +329,41 @@ body {
 
 /* Trending Collection */
 .trending {
+  position: relative;
   background-color: #2b0808;
   color: #fff;
-  padding: 160px 0 170px;
+  padding: 0 0 170px;
+  overflow: hidden;
+}
+.trending-bg-tile {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.16;
+  pointer-events: none;
+  z-index: 0;
+}
+.trending-header {
+  position: relative;
+  padding-top: 110px;
+}
+.trending-building {
+  position: absolute;
+  height: auto;
+  opacity: 0.6;
+  pointer-events: none;
+  z-index: 0;
+}
+.trending-building.left { top: 40px; left: 10%; width: 150px; opacity: 0.6; }
+.trending-building.right { top: 40px; right: 10%; left: auto; width: 170px; opacity: 0.6; }
+.trending-title, .trending-sub, .cat-ornament.trending-ornament {
+  position: relative;
+  z-index: 1;
+}
+@media (max-width: 640px) {
+  .trending-building { display: none; }
 }
 .trending-title {
   text-align: center;
@@ -476,10 +514,29 @@ body {
 
 /* Footer */
 .footer {
+  position: relative;
   background: #2b0808;
   color: #fff;
-  padding: 70px 24px 50px;
+  padding: 70px 24px 0;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+.footer-group { width: 100%; }
+.footer-group-email { margin-bottom: 0; }
+.footer-group-links { margin-bottom: 70px; }
+.footer-group-pattern { margin-top: 0; }
+.footer-bg-tile {
+  width: 100%;
+  height: 110px;
+  margin-top: 0;
+  opacity: 0.4;
+  display: block;
+}
+.footer-bg-tile-top {
+  height: 150px;
+  margin-top: 0;
+  margin-bottom: 40px;
 }
 .footer-subscribe h2 {
   margin: 0 0 28px;
@@ -529,7 +586,10 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   gap: 18px 42px;
-  margin-bottom: 36px;
+  margin-bottom: 44px;
+}
+.footer-links-sm {
+  margin-bottom: 44px;
 }
 .footer-links a {
   color: #fff;
@@ -545,7 +605,7 @@ body {
   letter-spacing: 0.05em;
 }
 @media (max-width: 768px) {
-  .footer { padding: 50px 16px 36px; }
+  .footer { padding: 50px 16px 0; }
   .footer-subscribe h2 { font-size: 12px; }
   .footer-subscribe h2 span { display: block; margin: 6px 0 0; font-size: 12px; }
   .subscribe-form { flex-direction: column; margin-bottom: 50px; }
@@ -636,12 +696,28 @@ body {
 
 /* Shop the look */
 .look {
+  position: relative;
   background: #2b0808;
   color: #fff;
   display: flex;
   align-items: center;
   gap: 16px;
   padding: 80px 40px;
+  overflow: hidden;
+}
+.look-bg-tile {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.16;
+  pointer-events: none;
+  z-index: 0;
+}
+.look-inner {
+  position: relative;
+  z-index: 1;
 }
 .look-inner {
   flex: 1;
@@ -744,6 +820,7 @@ body {
   .cat-label { font-size: 18px; padding-bottom: 16px; }
 
   .trending { padding: 56px 0 64px; }
+  .trending-header { padding-top: 0; }
   .prod-grid { grid-template-columns: repeat(2, 1fr); gap: 20px 12px; padding: 0 14px; }
   .prod-name { font-size: 12px; margin-bottom: 8px; line-height: 1.5; }
   .prod-info { padding-top: 8px; }
@@ -770,7 +847,7 @@ body {
   .feature span { font-size: 12px; }
   .feature img, .feature svg { height: 38px; }
 
-  .footer { padding: 48px 16px 36px; }
+  .footer { padding: 48px 16px 0; }
 }
 @media (max-width: 400px) {
   .prod-grid { gap: 16px 10px; padding: 0 10px; }
@@ -824,7 +901,7 @@ body {
   text-align: center;
   font-size: 16px;
   letter-spacing: 0.08em;
-  margin: 0 0 56px;
+  margin: 0 0 60px;
   opacity: 0.8;
 }
 .prod-card {
@@ -1067,7 +1144,7 @@ body {
   .shelf { padding: 84px 0 92px; }
   .look { padding: 72px 16px; }
   .features { padding: 64px 0 68px; }
-  .footer { padding: 72px 16px 52px; }
+  .footer { padding: 72px 16px 0; }
   .hero-content { bottom: 44px; }
 }
 
@@ -1534,7 +1611,7 @@ body {
   .shelf { padding: 108px 0 116px; }
   .look { padding: 96px 16px; }
   .features { padding: 84px 0 88px; }
-  .footer { padding: 96px 16px 64px; }
+  .footer { padding: 96px 16px 0; }
   .also { padding: 84px 0 96px; }
   .hero-content { bottom: 52px; }
 }

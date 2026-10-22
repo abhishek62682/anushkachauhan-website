@@ -106,9 +106,83 @@
 
   <!-- Trending Collection -->
   <section class="trending">
-    <img class="cat-ornament" src="ornament.svg" alt="">
-    <h2 class="trending-title">Trending Collection</h2>
-    <p class="trending-sub">Our most loved hand-embroidered pieces</p>
+    <div class="trending-bg-tile"></div>
+    <img class="chroma-key" style="display:none" data-src="https://images.prismic.io/gielly-green/ag1u1KYofJOwHaW5_gielly-green-salon-marylebone-cover.jpg?auto=format,compress" data-tile-bg=".trending-bg-tile" alt="">
+    <div class="trending-header">
+      <img class="cat-ornament trending-ornament" src="ornament.svg" alt="">
+      <h2 class="trending-title">Trending Collection</h2>
+      <p class="trending-sub">Our most loved hand-embroidered pieces</p>
+    </div>
+    <script>
+    (function(){
+      function chromaKey(img){
+        var src = img.getAttribute('data-src');
+        var loader = new Image();
+        loader.crossOrigin = 'anonymous';
+        loader.onload = function(){
+          var c = document.createElement('canvas');
+          c.width = loader.naturalWidth; c.height = loader.naturalHeight;
+          var ctx = c.getContext('2d');
+          ctx.drawImage(loader, 0, 0);
+          var w = c.width, h = c.height;
+          var data = ctx.getImageData(0, 0, w, h);
+          var d = data.data;
+
+          var sample = ctx.getImageData(10, 10, 1, 1).data;
+          var r0 = sample[0], g0 = sample[1], b0 = sample[2];
+
+          for (var i = 0; i < d.length; i += 4) {
+            var dr = d[i] - r0, dg = d[i+1] - g0, db = d[i+2] - b0;
+            var dist = Math.sqrt(dr*dr + dg*dg + db*db);
+            if (dist < 30) d[i+3] = 0;
+            else if (dist < 55) d[i+3] = Math.round(255 * (dist - 30) / (55 - 30));
+          }
+          ctx.putImageData(data, 0, 0);
+
+          var minX = w, minY = h, maxX = 0, maxY = 0;
+          for (var y = 0; y < h; y++) {
+            for (var x = 0; x < w; x++) {
+              var a = d[(y*w+x)*4+3];
+              if (a > 10) {
+                if (x < minX) minX = x;
+                if (x > maxX) maxX = x;
+                if (y < minY) minY = y;
+                if (y > maxY) maxY = y;
+              }
+            }
+          }
+          var padX = Math.round((maxX - minX) * 0.18);
+          var padY = Math.round((maxY - minY) * 0.18);
+          minX = Math.max(0, minX - padX);
+          minY = Math.max(0, minY - padY);
+          maxX = Math.min(w - 1, maxX + padX);
+          maxY = Math.min(h - 1, maxY + padY);
+
+          var cw = Math.max(1, maxX - minX + 1);
+          var ch = Math.max(1, maxY - minY + 1);
+          var crop = document.createElement('canvas');
+          crop.width = cw; crop.height = ch;
+          crop.getContext('2d').drawImage(c, minX, minY, cw, ch, 0, 0, cw, ch);
+
+          img.src = crop.toDataURL('image/png');
+          if (img.hasAttribute('data-tile-bg')) {
+            var tile = document.createElement('canvas');
+            tile.width = cw; tile.height = ch;
+            var tctx = tile.getContext('2d');
+            tctx.drawImage(c, minX, minY, cw, ch, 0, 0, cw, ch);
+            var target = document.querySelector(img.getAttribute('data-tile-bg'));
+            if (target) {
+              target.style.backgroundImage = 'url(' + tile.toDataURL('image/png') + ')';
+              target.style.backgroundRepeat = 'repeat';
+              target.style.backgroundSize = '160px auto';
+            }
+          }
+        };
+        loader.src = src;
+      }
+      document.querySelectorAll('img.chroma-key').forEach(chromaKey);
+    })();
+    </script>
     <div class="prod-slider">
       <button class="prod-arrow prod-prev" aria-label="Previous">&larr;</button>
       <div class="prod-grid">
@@ -218,6 +292,71 @@
 
   <!-- Shop the look -->
   <section class="look">
+    <div class="look-bg-tile"></div>
+    <img class="chroma-key" style="display:none" data-src="https://images.prismic.io/gielly-green/aQz-T7pReVYa4KSe_gielly-green-salon-fourseason-cover.jpg?auto=format,compress" data-tile-bg=".look-bg-tile" alt="">
+    <script>
+    (function(){
+      function chromaKey(img){
+        var src = img.getAttribute('data-src');
+        var loader = new Image();
+        loader.crossOrigin = 'anonymous';
+        loader.onload = function(){
+          var c = document.createElement('canvas');
+          c.width = loader.naturalWidth; c.height = loader.naturalHeight;
+          var ctx = c.getContext('2d');
+          ctx.drawImage(loader, 0, 0);
+          var w = c.width, h = c.height;
+          var data = ctx.getImageData(0, 0, w, h);
+          var d = data.data;
+
+          var sample = ctx.getImageData(10, 10, 1, 1).data;
+          var r0 = sample[0], g0 = sample[1], b0 = sample[2];
+
+          for (var i = 0; i < d.length; i += 4) {
+            var dr = d[i] - r0, dg = d[i+1] - g0, db = d[i+2] - b0;
+            var dist = Math.sqrt(dr*dr + dg*dg + db*db);
+            if (dist < 30) d[i+3] = 0;
+            else if (dist < 55) d[i+3] = Math.round(255 * (dist - 30) / (55 - 30));
+          }
+          ctx.putImageData(data, 0, 0);
+
+          var minX = w, minY = h, maxX = 0, maxY = 0;
+          for (var y = 0; y < h; y++) {
+            for (var x = 0; x < w; x++) {
+              var a = d[(y*w+x)*4+3];
+              if (a > 10) {
+                if (x < minX) minX = x;
+                if (x > maxX) maxX = x;
+                if (y < minY) minY = y;
+                if (y > maxY) maxY = y;
+              }
+            }
+          }
+          var padX = Math.round((maxX - minX) * 0.03);
+          var padY = Math.round((maxY - minY) * 0.03);
+          minX = Math.max(0, minX - padX);
+          minY = Math.max(0, minY - padY);
+          maxX = Math.min(w - 1, maxX + padX);
+          maxY = Math.min(h - 1, maxY + padY);
+
+          var cw = Math.max(1, maxX - minX + 1);
+          var ch = Math.max(1, maxY - minY + 1);
+          var crop = document.createElement('canvas');
+          crop.width = cw; crop.height = ch;
+          crop.getContext('2d').drawImage(c, minX, minY, cw, ch, 0, 0, cw, ch);
+
+          var target = document.querySelector(img.getAttribute('data-tile-bg'));
+          if (target) {
+            target.style.backgroundImage = 'url(' + crop.toDataURL('image/png') + ')';
+            target.style.backgroundRepeat = 'repeat';
+            target.style.backgroundSize = '140px auto';
+          }
+        };
+        loader.src = src;
+      }
+      document.querySelectorAll('.look img.chroma-key').forEach(chromaKey);
+    })();
+    </script>
     <div class="look-inner">
       <div class="look-main">
         <img src="assets/IMG-1297-d6f0f5f9-9b08-4944-af4f-b7aa0a2-583d29a4.png" alt="Shop the look">
@@ -351,35 +490,100 @@
 
   <!-- Footer -->
   <footer class="footer">
-    <div class="footer-subscribe">
-      <h2><strong>Be The First To Know</strong> <span>Veerangana &middot; Chapter I</span></h2>
-      <form class="subscribe-form" onsubmit="event.preventDefault(); this.reset();">
-        <input type="email" placeholder="Email address" aria-label="Email address" required>
-        <button type="submit">Subscribe</button>
-      </form>
+    <div class="footer-group footer-group-email">
+      <div class="footer-subscribe">
+        <h2><strong>Where Heritage Meets You First</strong> <span>Veerangana &middot; Chapter I</span></h2>
+        <form class="subscribe-form" onsubmit="event.preventDefault(); this.reset();">
+          <input type="email" placeholder="Email address" aria-label="Email address" required>
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
     </div>
-    <nav class="footer-links">
-      <a href="#!">Our Story</a>
-      <a href="#!">Veerangana</a>
-      <a href="#!">Book Appointment</a>
-      <a href="#!">Contact Us</a>
-      <a href="#!">FAQs</a>
-    </nav>
-    <nav class="footer-links footer-links-sm">
-      <a href="#!">Privacy Policy</a>
-      <a href="#!">Terms &amp; Conditions</a>
-      <a href="#!">Return &amp; Refund Policy</a>
-      <a href="#!">Shipping &amp; Exchange</a>
-    </nav>
-    <div class="footer-pay">
-      <span class="pay-badge pay-card"><img src="assets/paypal-svg-e057cab0.svg" alt="PayPal"></span>
-      <span class="pay-badge pay-icon"><img src="assets/googlepay-fa7f905e.svg" alt="Google Pay"></span>
-      <span class="pay-badge pay-icon"><img src="assets/applepay-a22bd9f9.svg" alt="Apple Pay"></span>
-      <span class="pay-badge pay-card"><img src="assets/visa-svg-cfb03396.svg" alt="Visa"></span>
-      <span class="pay-badge pay-card"><img src="assets/mastercard-svg-6678f524.svg" alt="Mastercard"></span>
-      <span class="pay-badge pay-card"><img src="assets/amex-svg-d3b367bf.svg" alt="American Express"></span>
+
+    <div class="footer-group footer-group-links">
+      <nav class="footer-links">
+        <a href="#!">Our Story</a>
+        <a href="#!">Veerangana</a>
+        <a href="#!">Book Appointment</a>
+        <a href="#!">Contact Us</a>
+        <a href="#!">FAQs</a>
+      </nav>
+      <nav class="footer-links footer-links-sm">
+        <a href="#!">Privacy Policy</a>
+        <a href="#!">Terms &amp; Conditions</a>
+        <a href="#!">Return &amp; Refund Policy</a>
+        <a href="#!">Shipping &amp; Exchange</a>
+      </nav>
+      <p class="footer-copy">&copy; 2026 Anushka Chauhan. Handcrafted in India. All rights reserved.</p>
     </div>
-    <p class="footer-copy">&copy; 2026 Anushka Chauhan. Handcrafted in India. All rights reserved.</p>
+
+    <div class="footer-group footer-group-pattern">
+      <div class="footer-bg-tile footer-bg-tile-bottom"></div>
+    </div>
+    <img class="chroma-key" style="display:none" data-src="https://images.prismic.io/gielly-green/ag1u1KYofJOwHaW5_gielly-green-salon-marylebone-cover.jpg?auto=format,compress" data-tile-bg=".footer-bg-tile-bottom" alt="">
+    <script>
+    (function(){
+      function chromaKey(img){
+        var src = img.getAttribute('data-src');
+        var loader = new Image();
+        loader.crossOrigin = 'anonymous';
+        loader.onload = function(){
+          var c = document.createElement('canvas');
+          c.width = loader.naturalWidth; c.height = loader.naturalHeight;
+          var ctx = c.getContext('2d');
+          ctx.drawImage(loader, 0, 0);
+          var w = c.width, h = c.height;
+          var data = ctx.getImageData(0, 0, w, h);
+          var d = data.data;
+
+          var sample = ctx.getImageData(10, 10, 1, 1).data;
+          var r0 = sample[0], g0 = sample[1], b0 = sample[2];
+
+          for (var i = 0; i < d.length; i += 4) {
+            var dr = d[i] - r0, dg = d[i+1] - g0, db = d[i+2] - b0;
+            var dist = Math.sqrt(dr*dr + dg*dg + db*db);
+            if (dist < 30) d[i+3] = 0;
+            else if (dist < 55) d[i+3] = Math.round(255 * (dist - 30) / (55 - 30));
+          }
+          ctx.putImageData(data, 0, 0);
+
+          var minX = w, minY = h, maxX = 0, maxY = 0;
+          for (var y = 0; y < h; y++) {
+            for (var x = 0; x < w; x++) {
+              var a = d[(y*w+x)*4+3];
+              if (a > 10) {
+                if (x < minX) minX = x;
+                if (x > maxX) maxX = x;
+                if (y < minY) minY = y;
+                if (y > maxY) maxY = y;
+              }
+            }
+          }
+          var padX = Math.round((maxX - minX) * 0.18);
+          var padY = Math.round((maxY - minY) * 0.02);
+          minX = Math.max(0, minX - padX);
+          minY = Math.max(0, minY - padY);
+          maxX = Math.min(w - 1, maxX + padX);
+          maxY = Math.min(h - 1, maxY + padY);
+
+          var cw = Math.max(1, maxX - minX + 1);
+          var ch = Math.max(1, maxY - minY + 1);
+          var crop = document.createElement('canvas');
+          crop.width = cw; crop.height = ch;
+          crop.getContext('2d').drawImage(c, minX, minY, cw, ch, 0, 0, cw, ch);
+
+          var target = document.querySelector(img.getAttribute('data-tile-bg'));
+          if (target) {
+            target.style.backgroundImage = 'url(' + crop.toDataURL('image/png') + ')';
+            target.style.backgroundRepeat = 'repeat-x';
+            target.style.backgroundSize = 'auto 100%';
+          }
+        };
+        loader.src = src;
+      }
+      document.querySelectorAll('.footer img.chroma-key').forEach(chromaKey);
+    })();
+    </script>
   </footer>
 
   <script>
@@ -448,6 +652,24 @@
         go();
       });
     });
+  </script>
+
+  <!-- Lenis smooth scroll -->
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
+  <script>
+    (function(){
+      if (typeof Lenis === 'undefined') return;
+      var lenis = new Lenis({
+        duration: 1.1,
+        easing: function (t) { return Math.min(1, 1.001 - Math.pow(2, -10 * t)); },
+        smoothWheel: true
+      });
+      function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+      }
+      requestAnimationFrame(raf);
+    })();
   </script>
 </body>
 </html>
