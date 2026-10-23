@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tridhaara | Handloom Sarees Rooted in Culture &amp; Earth</title>
-  <link rel="icon" href="logo.png" />
+  <link rel="icon" href="assets/logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <script src="https://cdn.tailwindcss.com"></script>
@@ -37,7 +37,7 @@
           </select>
         </div>
         <a href="index.html" class="logo" aria-label="Anushka Chauhan">
-          <img src="logo.png" alt="Anushka Chauhan - Handcrafted in India" />
+          <img src="assets/logo.png" alt="Anushka Chauhan - Handcrafted in India" />
         </a>
         <div class="nav-icons">
           <button aria-label="Search">
@@ -91,7 +91,7 @@
           alt="Anushka Chauhan hero banner 2" />
       </div>
       <div class="hero-content">
-        <img class="hero-ornament" src="ornament.svg" alt="" />
+        <img class="hero-ornament" src="assets/ornament.svg" alt="" />
         <h1 class="hero-title">Tridhaara</h1>
         <p class="hero-sub">Three Souls. One Legacy.</p>
         <a href="#!" class="hero-btn">Explore The Collection</a>
@@ -102,7 +102,7 @@
   <span id="shop"></span>
   <!-- Categories -->
   <section class="cat-section">
-    <img class="cat-ornament" src="ornament.svg" alt="" />
+    <img class="cat-ornament" src="assets/ornament.svg" alt="" />
     <h2 class="cat-title">Shop By Category</h2>
     <div class="cat-wrap">
       <button class="cat-arrow" id="catPrev" aria-label="Previous">
@@ -139,80 +139,10 @@
     <div class="trending-bg-tile"></div>
     <img class="chroma-key" style="display:none" data-src="https://images.prismic.io/gielly-green/ag1u1KYofJOwHaW5_gielly-green-salon-marylebone-cover.jpg?auto=format,compress" data-tile-bg=".trending-bg-tile" alt="">
     <div class="trending-header">
-      <img class="cat-ornament trending-ornament" src="ornament.svg" alt="">
+      <img class="cat-ornament trending-ornament" src="assets/ornament.svg" alt="">
       <h2 class="trending-title">Trending Collection</h2>
       <p class="trending-sub">Our most loved handloom sarees</p>
     </div>
-    <script>
-    (function(){
-      function chromaKey(img){
-        var src = img.getAttribute('data-src');
-        var loader = new Image();
-        loader.crossOrigin = 'anonymous';
-        loader.onload = function(){
-          var c = document.createElement('canvas');
-          c.width = loader.naturalWidth; c.height = loader.naturalHeight;
-          var ctx = c.getContext('2d');
-          ctx.drawImage(loader, 0, 0);
-          var w = c.width, h = c.height;
-          var data = ctx.getImageData(0, 0, w, h);
-          var d = data.data;
-
-          var sample = ctx.getImageData(10, 10, 1, 1).data;
-          var r0 = sample[0], g0 = sample[1], b0 = sample[2];
-
-          for (var i = 0; i < d.length; i += 4) {
-            var dr = d[i] - r0, dg = d[i+1] - g0, db = d[i+2] - b0;
-            var dist = Math.sqrt(dr*dr + dg*dg + db*db);
-            if (dist < 30) d[i+3] = 0;
-            else if (dist < 55) d[i+3] = Math.round(255 * (dist - 30) / (55 - 30));
-          }
-          ctx.putImageData(data, 0, 0);
-
-          var minX = w, minY = h, maxX = 0, maxY = 0;
-          for (var y = 0; y < h; y++) {
-            for (var x = 0; x < w; x++) {
-              var a = d[(y*w+x)*4+3];
-              if (a > 10) {
-                if (x < minX) minX = x;
-                if (x > maxX) maxX = x;
-                if (y < minY) minY = y;
-                if (y > maxY) maxY = y;
-              }
-            }
-          }
-          var padX = Math.round((maxX - minX) * 0.18);
-          var padY = Math.round((maxY - minY) * 0.18);
-          minX = Math.max(0, minX - padX);
-          minY = Math.max(0, minY - padY);
-          maxX = Math.min(w - 1, maxX + padX);
-          maxY = Math.min(h - 1, maxY + padY);
-
-          var cw = Math.max(1, maxX - minX + 1);
-          var ch = Math.max(1, maxY - minY + 1);
-          var crop = document.createElement('canvas');
-          crop.width = cw; crop.height = ch;
-          crop.getContext('2d').drawImage(c, minX, minY, cw, ch, 0, 0, cw, ch);
-
-          img.src = crop.toDataURL('image/png');
-          if (img.hasAttribute('data-tile-bg')) {
-            var tile = document.createElement('canvas');
-            tile.width = cw; tile.height = ch;
-            var tctx = tile.getContext('2d');
-            tctx.drawImage(c, minX, minY, cw, ch, 0, 0, cw, ch);
-            var target = document.querySelector(img.getAttribute('data-tile-bg'));
-            if (target) {
-              target.style.backgroundImage = 'url(' + tile.toDataURL('image/png') + ')';
-              target.style.backgroundRepeat = 'repeat';
-              target.style.backgroundSize = '160px auto';
-            }
-          }
-        };
-        loader.src = src;
-      }
-      document.querySelectorAll('img.chroma-key').forEach(chromaKey);
-    })();
-    </script>
     <div class="prod-slider">
       <button class="prod-arrow prod-prev" aria-label="Previous">&larr;</button>
       <div class="prod-grid">
@@ -295,7 +225,7 @@
 
     <!-- Best sellers -->
   <section class="shelf shelf-solid">
-    <img class="cat-ornament" src="ornament.svg" alt="">
+    <img class="cat-ornament" src="assets/ornament.svg" alt="">
     <h2 class="shelf-title">Best Sellers</h2>
     <p class="shelf-sub">The sarees everyone keeps coming back to</p>
     <div class="prod-slider">
@@ -382,69 +312,6 @@
   <section class="look">
     <div class="look-bg-tile"></div>
     <img class="chroma-key" style="display:none" data-src="https://images.prismic.io/gielly-green/aQz-T7pReVYa4KSe_gielly-green-salon-fourseason-cover.jpg?auto=format,compress" data-tile-bg=".look-bg-tile" alt="">
-    <script>
-    (function(){
-      function chromaKey(img){
-        var src = img.getAttribute('data-src');
-        var loader = new Image();
-        loader.crossOrigin = 'anonymous';
-        loader.onload = function(){
-          var c = document.createElement('canvas');
-          c.width = loader.naturalWidth; c.height = loader.naturalHeight;
-          var ctx = c.getContext('2d');
-          ctx.drawImage(loader, 0, 0);
-          var w = c.width, h = c.height;
-          var data = ctx.getImageData(0, 0, w, h);
-          var d = data.data;
-
-          var sample = ctx.getImageData(10, 10, 1, 1).data;
-          var r0 = sample[0], g0 = sample[1], b0 = sample[2];
-
-          for (var i = 0; i < d.length; i += 4) {
-            var dr = d[i] - r0, dg = d[i+1] - g0, db = d[i+2] - b0;
-            var dist = Math.sqrt(dr*dr + dg*dg + db*db);
-            if (dist < 30) d[i+3] = 0;
-            else if (dist < 55) d[i+3] = Math.round(255 * (dist - 30) / (55 - 30));
-          }
-          ctx.putImageData(data, 0, 0);
-
-          var minX = w, minY = h, maxX = 0, maxY = 0;
-          for (var y = 0; y < h; y++) {
-            for (var x = 0; x < w; x++) {
-              var a = d[(y*w+x)*4+3];
-              if (a > 10) {
-                if (x < minX) minX = x;
-                if (x > maxX) maxX = x;
-                if (y < minY) minY = y;
-                if (y > maxY) maxY = y;
-              }
-            }
-          }
-          var padX = Math.round((maxX - minX) * 0.03);
-          var padY = Math.round((maxY - minY) * 0.03);
-          minX = Math.max(0, minX - padX);
-          minY = Math.max(0, minY - padY);
-          maxX = Math.min(w - 1, maxX + padX);
-          maxY = Math.min(h - 1, maxY + padY);
-
-          var cw = Math.max(1, maxX - minX + 1);
-          var ch = Math.max(1, maxY - minY + 1);
-          var crop = document.createElement('canvas');
-          crop.width = cw; crop.height = ch;
-          crop.getContext('2d').drawImage(c, minX, minY, cw, ch, 0, 0, cw, ch);
-
-          var target = document.querySelector(img.getAttribute('data-tile-bg'));
-          if (target) {
-            target.style.backgroundImage = 'url(' + crop.toDataURL('image/png') + ')';
-            target.style.backgroundRepeat = 'repeat';
-            target.style.backgroundSize = '140px auto';
-          }
-        };
-        loader.src = src;
-      }
-      document.querySelectorAll('.look img.chroma-key').forEach(chromaKey);
-    })();
-    </script>
     <div class="look-inner">
       <div class="look-main">
         <img src="assets/IMG-1297-d6f0f5f9-9b08-4944-af4f-b7aa0a2-583d29a4.png" alt="Shop the look - Tridhaara handloom sarees">
@@ -524,7 +391,7 @@
     <div class="footer-group footer-group-email">
       <div class="footer-subscribe">
         <h2><strong>Where Heritage Meets You First</strong> <span>Tridhaara &middot; Three Souls. One Legacy.</span></h2>
-        <form class="subscribe-form" onsubmit="event.preventDefault(); this.reset();">
+        <form class="subscribe-form">
           <input type="email" placeholder="Email address" aria-label="Email address" required>
           <button type="submit">Subscribe</button>
         </form>
@@ -557,167 +424,11 @@
       <div class="footer-bg-tile footer-bg-tile-bottom"></div>
     </div>
     <img class="chroma-key" style="display:none" data-src="https://images.prismic.io/gielly-green/ag1u1KYofJOwHaW5_gielly-green-salon-marylebone-cover.jpg?auto=format,compress" data-tile-bg=".footer-bg-tile-bottom" alt="">
-    <script>
-    (function(){
-      function chromaKey(img){
-        var src = img.getAttribute('data-src');
-        var loader = new Image();
-        loader.crossOrigin = 'anonymous';
-        loader.onload = function(){
-          var c = document.createElement('canvas');
-          c.width = loader.naturalWidth; c.height = loader.naturalHeight;
-          var ctx = c.getContext('2d');
-          ctx.drawImage(loader, 0, 0);
-          var w = c.width, h = c.height;
-          var data = ctx.getImageData(0, 0, w, h);
-          var d = data.data;
-
-          var sample = ctx.getImageData(10, 10, 1, 1).data;
-          var r0 = sample[0], g0 = sample[1], b0 = sample[2];
-
-          for (var i = 0; i < d.length; i += 4) {
-            var dr = d[i] - r0, dg = d[i+1] - g0, db = d[i+2] - b0;
-            var dist = Math.sqrt(dr*dr + dg*dg + db*db);
-            if (dist < 30) d[i+3] = 0;
-            else if (dist < 55) d[i+3] = Math.round(255 * (dist - 30) / (55 - 30));
-          }
-          ctx.putImageData(data, 0, 0);
-
-          var minX = w, minY = h, maxX = 0, maxY = 0;
-          for (var y = 0; y < h; y++) {
-            for (var x = 0; x < w; x++) {
-              var a = d[(y*w+x)*4+3];
-              if (a > 10) {
-                if (x < minX) minX = x;
-                if (x > maxX) maxX = x;
-                if (y < minY) minY = y;
-                if (y > maxY) maxY = y;
-              }
-            }
-          }
-          var padX = Math.round((maxX - minX) * 0.18);
-          var padY = Math.round((maxY - minY) * 0.02);
-          minX = Math.max(0, minX - padX);
-          minY = Math.max(0, minY - padY);
-          maxX = Math.min(w - 1, maxX + padX);
-          maxY = Math.min(h - 1, maxY + padY);
-
-          var cw = Math.max(1, maxX - minX + 1);
-          var ch = Math.max(1, maxY - minY + 1);
-          var crop = document.createElement('canvas');
-          crop.width = cw; crop.height = ch;
-          crop.getContext('2d').drawImage(c, minX, minY, cw, ch, 0, 0, cw, ch);
-
-          var target = document.querySelector(img.getAttribute('data-tile-bg'));
-          if (target) {
-            target.style.backgroundImage = 'url(' + crop.toDataURL('image/png') + ')';
-            target.style.backgroundRepeat = 'repeat-x';
-            target.style.backgroundSize = 'auto 100%';
-          }
-        };
-        loader.src = src;
-      }
-      document.querySelectorAll('.footer img.chroma-key').forEach(chromaKey);
-    })();
-    </script>
   </footer>
-
-  <script>
-    const texts = document.querySelectorAll(".banner-text");
-    let i = 0;
-    texts[0].classList.add("active");
-    setInterval(() => {
-      texts[i].classList.remove("active");
-      texts[i].classList.add("exit");
-      const prev = texts[i];
-      setTimeout(() => prev.classList.remove("exit"), 600);
-      i = (i + 1) % texts.length;
-      texts[i].classList.add("active");
-    }, 3000);
-    const slides = document.querySelectorAll(".hero-slide");
-    let h = 0;
-    setInterval(() => {
-      slides[h].classList.remove("active");
-      h = (h + 1) % slides.length;
-      slides[h].classList.add("active");
-    }, 4000);
-    const catTrack = document.getElementById("catTrack");
-    const step = () => catTrack.clientWidth * 0.5;
-    document.getElementById("catPrev").onclick = () =>
-      catTrack.scrollBy({ left: -step(), behavior: "smooth" });
-    document.getElementById("catNext").onclick = () =>
-      catTrack.scrollBy({ left: step(), behavior: "smooth" });
-    const lookSlides = document.querySelectorAll(".look-slide");
-    const lookDots = document.querySelectorAll(".look-dot");
-    const lookSpots = document.querySelectorAll(".hotspot");
-   const lookData = [
-  { name: "Olive Handloom Cotton Saree", price: "INR 6,900.00" },
-  { name: "Black Handloom Silk Saree", price: "INR 11,500.00" },
-];
-    let l = 0;
-    const showLook = (n) => {
-      l = (n + lookSlides.length) % lookSlides.length;
-      lookSlides.forEach((el, k) => el.classList.toggle("active", k === l));
-      lookDots.forEach((el, k) => el.classList.toggle("active", k === l));
-      lookSpots.forEach((el, k) => el.classList.toggle("active", k === l));
-      document.getElementById("lookName").textContent = lookData[l].name;
-      document.getElementById("lookPrice").textContent = lookData[l].price;
-    };
-    lookDots.forEach((d, k) => (d.onclick = () => showLook(k)));
-    lookSpots.forEach(
-      (d) => (d.onclick = () => showLook(Number(d.dataset.index))),
-    );
-    document.querySelectorAll(".prod-slider").forEach((sl) => {
-      const track = sl.querySelector(".prod-grid");
-      const by = () => track.clientWidth * 0.8;
-      sl.querySelector(".prod-prev").onclick = () =>
-        track.scrollBy({ left: -by(), behavior: "smooth" });
-      sl.querySelector(".prod-next").onclick = () =>
-        track.scrollBy({ left: by(), behavior: "smooth" });
-    });
-    document.querySelectorAll(".prod-card").forEach((card) => {
-      const go = () => {
-        const bg = card.querySelector(".prod-img").style.backgroundImage;
-        const m = bg.match(/url\(["']?(.*?)["']?\)$/);
-        const params = new URLSearchParams({
-          name: card.querySelector(".prod-name").textContent.trim(),
-          price: card
-            .querySelector(".prod-price")
-            .textContent.replace(/\s+/g, " ")
-            .trim(),
-          img: m ? m[1] : "",
-        });
-        const gal = card.querySelector(".prod-img").dataset.gallery;
-        if (gal) params.set("gallery", gal);
-        location.href = "product.html?" + params.toString();
-      };
-      card.style.cursor = "pointer";
-      card.addEventListener("click", (e) => {
-        if (e.target.closest(".prod-wish, .prod-cart")) return;
-        go();
-      });
-    });
-  </script>
 
   <!-- Lenis smooth scroll -->
   <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
-  <script>
-    (function () {
-      if (typeof Lenis === "undefined") return;
-      var lenis = new Lenis({
-        duration: 1.1,
-        easing: function (t) {
-          return Math.min(1, 1.001 - Math.pow(2, -10 * t));
-        },
-        smoothWheel: true,
-      });
-      function raf(time) {
-        lenis.raf(time);
-        requestAnimationFrame(raf);
-      }
-      requestAnimationFrame(raf);
-    })();
-  </script>
+  <script src="index.js" defer></script>
 </body>
 
 </html>
